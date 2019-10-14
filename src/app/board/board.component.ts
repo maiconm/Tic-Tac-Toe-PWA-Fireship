@@ -46,8 +46,8 @@ export class BoardComponent implements OnInit {
       [0, 4, 8],
       [2, 4, 6]
     ];
-    lines.forEach(value => {
-      const [a, b, c] = value;
+    for (const line of lines) {
+      const [a, b, c] = line;
       if (
         this.squares[a] &&
         this.squares[a] === this.squares[b] &&
@@ -55,7 +55,7 @@ export class BoardComponent implements OnInit {
       ) {
         return this.squares[a];
       }
-    });
+    }
     return null;
   }
 }
