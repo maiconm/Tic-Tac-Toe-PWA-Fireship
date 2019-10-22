@@ -1,4 +1,4 @@
-<h1>Current player {{ player }}</h1>
+<h1 *ngIf="!isGameDraw">Current player {{ player }}</h1>
 
 <button
   nbButton
@@ -12,6 +12,10 @@
 
 <h2 *ngIf="winner">
   Player {{ winner }} won the game!
+</h2>
+
+<h2 *ngIf="isGameDraw">
+  Draw
 </h2>
 
 <main>

@@ -57,9 +57,6 @@ export class BoardComponent implements OnInit {
         return this.squares[a];
       }
     }
-    if (!this.winner && this.isEverySquareNotEmpty()) {
-      console.log('draw');
-    }
     return null;
   }
 
@@ -69,5 +66,9 @@ export class BoardComponent implements OnInit {
 
   isEverySquareNotEmpty(): boolean {
     return this.squares.every(square => !!square);
+  }
+
+  get isGameDraw(): boolean {
+    return !this.winner && this.isEverySquareNotEmpty();
   }
 }
