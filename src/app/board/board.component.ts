@@ -57,10 +57,17 @@ export class BoardComponent implements OnInit {
         return this.squares[a];
       }
     }
+    if (!this.winner && this.isEverySquareNotEmpty()) {
+      console.log('draw');
+    }
     return null;
   }
 
   canContinue(): boolean {
     return !!this.winner;
+  }
+
+  isEverySquareNotEmpty(): boolean {
+    return this.squares.every(square => !!square);
   }
 }
